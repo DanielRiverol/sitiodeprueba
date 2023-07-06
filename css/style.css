@@ -1,17 +1,119 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 4 | @import "pa`rtials/variables";
- *   |         ^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss/style.scss 4:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @import \"pa`rtials/variables\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss/style.scss 4:9  root stylesheet";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
+
+/* Variables */
+@font-face {
+  font-family: "Nadilla";
+  src: url("../fonts/Nadilla.otf");
+}
+h1 {
+  color: red;
+  font-size: 50px;
+}
+
+.cabecera {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-image: url("../img/background-real-state.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cabecera h1 {
+  font-family: "Nadilla";
+  font-size: 60px;
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  text-shadow: 1px 2px 15px #848181;
+}
+.cabecera p {
+  width: 50%;
+  position: absolute;
+  top: 200px;
+  left: 320px;
+  font-weight: 600;
+  text-shadow: 1px 2px 15px #848181;
+  font-size: 1.4rem;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #03cea4;
+  z-index: 100;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navbar ul .nav-item {
+  /* display: inline-block; */
+  padding: 10px;
+  margin: 5px;
+  background-color: #2db323;
+  list-style: none;
+}
+.navbar ul .nav-item:hover {
+  background-color: #03cea4;
+  border: 1.5px solid #2db323;
+}
+.navbar ul .nav-item a {
+  color: white;
+}
+.navbar #checkbox-menu,
+.navbar label.menu {
+  display: none;
+}
+.navbar label.menu {
+  font-size: 25.8px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn {
+  border-radius: 8px;
+  width: 200px;
+  border: none;
+  height: 25px;
+  font-size: 1.0125rem;
+  font-weight: 500;
+}
+
+.btn-success {
+  background-color: #5ac652;
+}
+
+.btn-cancel {
+  background-color: #ea5a39;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    /* top: 50px; */
+    background-color: #03CEA4;
+  }
+  label.menu {
+    display: block;
+    margin-left: 10px;
+  }
+  #checkbox-menu:checked ~ ul {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
