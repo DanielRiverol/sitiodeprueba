@@ -1,0 +1,20 @@
+/* Media queries */
+
+@media screen and (max-width:600px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        /* top: 50px; */
+        background-color: #03CEA4;
+    }
+
+    label.menu {
+        display: block;
+        margin-left: 10px;
+    }
+
+    #checkbox-menu:checked~ul {
+        display: block;
+    }
+}
